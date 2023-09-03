@@ -10,23 +10,32 @@ import Button from "react-bootstrap/Button";
 import Tables from "../../components/tables/table";
 import { Container } from "react-bootstrap";
 import { Col, Row } from "react-bootstrap";
+import Spinner from 'react-bootstrap/Spinner';
 import Chart from "react-apexcharts";
 import Apexchart from "../../components/apexchart/apexchart";
 import Muitable from "../../components/muitable/muitable";
 import { gql, useQuery } from "@apollo/client";
-import { useBranches } from "../../hooks/useBranches";
+import { useBranches} from "../../hooks/useBranches";
+import Customercard from "../../components/customercard/customercard";
 
 
 
 const Home = () => {
 
-  // const{error,loading,data} = useBranches();
-  // console.log({error,loading,data});
-  // const branches = data.getBranches.data;
+const {error,loading,branches} = useBranches();
+// const branches = data.getBranches.data;
+const branchCount = branches.length;
 
-//   const { loading, error, data } = useQuery(GET_BRANCHES);
-// // const {getBranches} = data
-//   console.log(data?.getBranches?.data);
+if (loading) {
+  return <div><Spinner animation="border" variant="warning" /></div>;
+}
+
+if (error) {
+  return <div>Error: {error.message}</div>;
+}
+
+
+
 
   return (
     <Container fluid>
@@ -35,10 +44,11 @@ const Home = () => {
         <div className="homeContainer">
           <Navbar />
           <div className="widgets">
-            <Widget type="user" />
+            {/* <Widget type="user" />
             <Widget type="order" />
             <Widget type="earning" />
-            <Widget type="balance" />
+            <Widget type="balance" /> */}
+            <Customercard />
           </div>
           <div className="charts">
             <Featured />
@@ -65,15 +75,16 @@ const Home = () => {
                       </h5>
                     </div>
                     <div className="p-3">
-                      <Muitable />
-                      {/* <div>
-      <h1>Branches</h1>
-      <ul>
-        {branches.map(branch => (
-          <li key={branch._id}>{branch.name}</li>
-        ))}
-      </ul>
-    </div> */}
+                      {/* <Muitable /> */}
+                      
+                        <div>
+                        <h1>Branches : {branchCount}</h1>
+                        <ul>
+                          {branches.map(branch => (
+                            <li key={branch._id}>{branch.name}</li>
+                          ))}
+                        </ul>
+                      </div>
 
                     </div>
                   </div>

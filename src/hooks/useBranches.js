@@ -1,4 +1,5 @@
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
+import gql from 'graphql-tag';
 
 
 const GET_BRANCHES = gql`
@@ -34,13 +35,12 @@ query GetBranches {
     statusCode
   }
 }
-`
-
-export const useBranches = () =>{
+`;
+export function useBranches (){
     const{error, loading, data} = useQuery(GET_BRANCHES);
     return{
         error,
         loading,
-        data,
+        branches: data?.getBranches?.data || [],
     }
 }
