@@ -3,7 +3,7 @@ import "../datatable/datatable.scss";
 import {
   Button,
 } from "@mui/material";
-import { useBranches } from "../../hooks/useBranches";
+import { useBranches } from "../../lib/hooks/useBranches";
 import { DataGrid } from "@mui/x-data-grid";
 import "./muitable.scss";
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';

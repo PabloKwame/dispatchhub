@@ -3,10 +3,10 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import Chart from "../../components/chart/Chart";
 import List from "../../components/table/Table";
-import img1 from '../../img/CHRISBnew.jpg'
+import img1 from '../../assets/img/CHRISBnew.jpg'
 import Apexchart from "../../components/apexchart/apexchart";
 import { useQuery } from "@apollo/client";
-import { useBranch, useBranchByName } from "../../hooks/useBranch";
+import {  useBranchByName } from "../../lib/hooks/useBranch";
 import { useParams } from "react-router-dom";
 
 

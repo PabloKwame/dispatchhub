@@ -15,7 +15,7 @@ import Chart from "react-apexcharts";
 import Apexchart from "../../components/apexchart/apexchart";
 import Muitable from "../../components/branchestable/muitable";
 import { gql, useQuery } from "@apollo/client";
-import { useBranches} from "../../hooks/useBranches";
+import { useBranches} from "../../lib/hooks/useBranches";
 import Customercard from "../../components/customercard/customercard";
 import Datatable from "../../components/datatable/Datatable";
 import BranchesTable from "../../components/branchestable/muitable";

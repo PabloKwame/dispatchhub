@@ -12,7 +12,7 @@ import { colors } from "@mui/material";
 import Tables from "../tables/table";
 import Customertabs from "../tabs/tabs";
 import { gql, useQuery } from "@apollo/client";
-import { useBranches } from "../../hooks/useBranches";
+import { useBranches } from "../../lib/hooks/useBranches";
 
 
 const Customercard = () => {
