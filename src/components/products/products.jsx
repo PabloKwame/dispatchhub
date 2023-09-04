@@ -1,7 +1,7 @@
 import React from "react";
 import {Card, Container, Row, Col, Button} from 'react-bootstrap';
 import { colors } from "@mui/material";
-import Muitable from "../muitable/muitable";
+import Muitable from "../branchestable/muitable";
 const Product = () =>{
     return(
         <>

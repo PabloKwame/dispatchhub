@@ -5,8 +5,25 @@ import Chart from "../../components/chart/Chart";
 import List from "../../components/table/Table";
 import img1 from '../../img/CHRISBnew.jpg'
 import Apexchart from "../../components/apexchart/apexchart";
+import { useQuery } from "@apollo/client";
+import { useBranch, useBranchByName } from "../../hooks/useBranch";
+import { useParams } from "react-router-dom";
+
+
 
 const Single = () => {
+  const { branchName } = useParams(); // Get the branchName from the URL params
+  const { branch, loading, error } = useBranchByName(branchName);
+  console.log("Branch Name:", branchName);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
   return (
     <div className="single">
       <Sidebar />
@@ -23,9 +40,9 @@ const Single = () => {
                 className="itemImg"
               />
               <div className="details">
-                <h1 className="itemTitle">Pizzaman Customer</h1>
+                <h1 className="itemTitle">User ID: {branch.name}</h1>
                 <div className="detailItem">
-                  <span className="itemKey">Email:</span>
+                  <span className="itemKey"></span>
                   <span className="itemValue">pizzamancustomer@gmail.com</span>
                 </div>
                 <div className="detailItem">

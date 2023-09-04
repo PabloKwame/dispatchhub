@@ -13,29 +13,21 @@ import Tables from "../tables/table";
 import Customertabs from "../tabs/tabs";
 import { gql, useQuery } from "@apollo/client";
 import { useBranches } from "../../hooks/useBranches";
-import { useCustomers } from "../../hooks/useCustomers";
 
 
 const Customercard = () => {
 
-    const { error: branchesError, loading: branchesLoading, branches } = useBranches();
-    const { error: customersError, loading: customersLoading, customers } = useCustomers();
+const {error,loading,branches} = useBranches();
 // const branches = data.getBranches.data;
 const branchCount = branches.length;
 
+if (loading) {
+  return <div>Loading...</div>;
+}
 
-if (branchesLoading || customersLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (branchesError || customersError) {
-    return (
-      <div>
-        {branchesError && <div>Error fetching branches: {branchesError.message}</div>}
-        {customersError && <div>Error fetching customers: {customersError.message}</div>}
-      </div>
-    );
-  }
+if (error) {
+  return <div>Error: {error.message}</div>;
+}
 
     return(
         <Container fluid >
@@ -46,9 +38,9 @@ if (branchesLoading || customersLoading) {
                             <div>
                                 <div style={{display:'flex', justifyContent:'space-between'}}>
                                     <p>Total Branches</p>
-                                    <span ><ArrowUpwardOutlinedIcon style={{alignSelf:'flex-end', color: 'green', height:'20px' }}/>20%</span>
+                                    <span ><ArrowUpwardOutlinedIcon style={{alignSelf:'flex-end', color: 'green', height:'20px' }}/></span>
                                 </div>
-                                <h4>{customers.length}</h4>
+                                <h4>{branchCount}</h4>
                                 <div style={{display:'flex', justifyContent:'space-between'}}>
                                 <span className="muted" style={{fontSize:'12px', paddingTop:'4px'}}>View all customers</span>
                                 <span ><PeopleOutlinedIcon style={{alignSelf:'flex-end', color: 'blue', height:'20px' }}/></span>
@@ -61,7 +53,7 @@ if (branchesLoading || customersLoading) {
                             <div>
                                 <div style={{display:'flex', justifyContent:'space-between'}}>
                                     <p>Customer Contact</p>
-                                    <span ><BarChartIcon style={{alignSelf:'flex-end', color: 'green', height:'20px' }}/>20%</span>
+                                    <span ><BarChartIcon style={{alignSelf:'flex-end', color: 'green', height:'20px' }}/></span>
                                 </div>
                                 <h4>0540752816</h4>
                                 <div style={{display:'flex', justifyContent:'space-between'}}>
@@ -76,7 +68,7 @@ if (branchesLoading || customersLoading) {
                             <div>
                                 <div style={{display:'flex', justifyContent:'space-between'}}>
                                     <p>Total Orders</p>
-                                    <span ><BarChartIcon style={{alignSelf:'flex-end', color: 'green', height:'20px' }}/>20%</span>
+                                    <span ><BarChartIcon style={{alignSelf:'flex-end', color: 'green', height:'20px' }}/></span>
                                 </div>
                                 <h4>20</h4>
                                 <div style={{display:'flex', justifyContent:'space-between'}}>

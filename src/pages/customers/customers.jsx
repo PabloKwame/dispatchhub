@@ -7,6 +7,7 @@ import Widget from "../../components/widget/Widget";
 // import Customercard from "../../components/customercard/customercard";
 // import Product from "../../components/products/products";
 import Customerspage from "../../components/customersPage/customerspage";
+import Single from "../single/Single";
 
 
 const Customers = () =>{
@@ -19,7 +20,7 @@ const Customers = () =>{
             <div className="pt-4">
                 {/* <Customercard /> */}
                 {/* <Product /> */}
-                <Customerspage />
+               <Single/>
             </div>
         
       </div>

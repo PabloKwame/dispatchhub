@@ -9,6 +9,7 @@ import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import Customers from "./pages/customers/customers";
 import Logins from "./pages/login/Login";
+import Product from "./components/products/products";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -20,22 +21,21 @@ function App() {
           <Route path="/">
           <Route index element={<Logins />} />
             <Route path="home"  element={<Home />} />
+            
             {/* <Route path="login" element={<Login />} /> */}
             <Route path="users">
               <Route index element={<List />} />
-              <Route path=":userId" element={<Single />} />
+              <Route path=":branchName" element={<Single />} />
               <Route
                 path="new"
                 element={<New inputs={userInputs} title="Add New User" />}
               />
             </Route>
+            <Route path="product">
+              <Route index element={<Product />} />
+            </Route>
             <Route path="customers">
               <Route index element={<Customers />} />
-              <Route path=":userId" element={<Customers/>} />
-              <Route
-                path="new"
-                element={<New inputs={userInputs} title="Add New User" />}
-              />
             </Route>
             <Route path="products">
               <Route index element={<List />} />

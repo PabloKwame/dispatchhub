@@ -7,12 +7,18 @@
   box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
   border-radius: 10px;
   height: 100px;
+  
 
   .left,
   .right {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media (max-width:1000px){
+    flex-direction: column;
+  
+  }
+    
 
     .title {
       font-weight: bold;
@@ -52,3 +58,4 @@
     }
   }
 }
+

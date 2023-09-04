@@ -5,23 +5,24 @@ import { DarkModeContextProvider } from "./context/darkModeContext";
 import "react-bootstrap/dist/react-bootstrap";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@apollo/client";
+import { HttpLink, split, ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { getMainDefinition } from "@apollo/client/utilities";
+import { WebSocketLink } from "@apollo/client/link/ws"; // Import WebSocketLink
 import { setContext } from "@apollo/client/link/context"; // Import setContext
 
 // Replace with your GraphQL API endpoint
 const graphqlEndpoint = "https://chipsandpepperoni.herokuapp.com/graphql";
 
-// Function to retrieve the authentication token from local storage or another source
+const httpLink = new HttpLink({
+  uri: graphqlEndpoint,
+});
+
+// Function to retrieve the authentication token from local storage
 const getAuthToken = () => {
   const token = localStorage.getItem('authToken');
   console.log('Authentication Token:', token); // Log the token
   return token;
 };
-
-// Create an HTTP link to your GraphQL API
-const httpLink = createHttpLink({
-  uri: graphqlEndpoint,
-});
 
 // Create an Apollo Client instance with authorization headers
 const authLink = setContext((_, { headers }) => {
@@ -33,7 +34,7 @@ const authLink = setContext((_, { headers }) => {
     return {
       headers: {
         ...headers,
-        authorization: `Bearer ${token}`,
+        authorization: `Bearer ${token}`, // Use the retrieved token
       },
     };
   }
@@ -46,7 +47,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
   connectToDevTools: true,
 });
-  
+
 ReactDOM.render(
   <React.StrictMode>
     <DarkModeContextProvider>

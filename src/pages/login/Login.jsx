@@ -71,7 +71,7 @@ function Login() {
   return (
     
 
-    <section className="vh-100" style={{ backgroundColor: '#F07470'}}>
+    <section className="vh-100" style={{ backgroundColor: '#960018'}}>
     <Container className="py-5 h-100">
       <Row className="justify-content-center align-items-center h-100">
         <Col xl={10}>

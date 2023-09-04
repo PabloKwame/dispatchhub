@@ -2,7 +2,7 @@ import React from "react";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import Tables from "../tables/table";
-import Muitable from "../muitable/muitable";
+import Muitable from "../branchestable/muitable";
 
 const Customertabs = () =>{
     return(

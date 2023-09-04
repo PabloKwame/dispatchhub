@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import "./home.scss";
@@ -13,12 +13,12 @@ import { Col, Row } from "react-bootstrap";
 import Spinner from 'react-bootstrap/Spinner';
 import Chart from "react-apexcharts";
 import Apexchart from "../../components/apexchart/apexchart";
-import Muitable from "../../components/muitable/muitable";
+import Muitable from "../../components/branchestable/muitable";
 import { gql, useQuery } from "@apollo/client";
 import { useBranches} from "../../hooks/useBranches";
 import Customercard from "../../components/customercard/customercard";
-
-
+import Datatable from "../../components/datatable/Datatable";
+import BranchesTable from "../../components/branchestable/muitable";
 
 const Home = () => {
 
@@ -34,9 +34,6 @@ if (error) {
   return <div>Error: {error.message}</div>;
 }
 
-
-
-
   return (
     <Container fluid>
       <div className="home">
@@ -44,11 +41,11 @@ if (error) {
         <div className="homeContainer">
           <Navbar />
           <div className="widgets">
-            {/* <Widget type="user" />
+            <Widget type="user" />
             <Widget type="order" />
             <Widget type="earning" />
-            <Widget type="balance" /> */}
-            <Customercard />
+            <Widget type="balance" />
+            {/* <Customercard /> */}
           </div>
           <div className="charts">
             <Featured />
@@ -63,6 +60,7 @@ if (error) {
           <div className="listContainer">
             <div className="listTitle">Latest Transactions</div>
             <Table />
+           {/* <BranchesTable/> */}
           </div>
           <div>
             <Container fluid>
@@ -75,16 +73,16 @@ if (error) {
                       </h5>
                     </div>
                     <div className="p-3">
-                      {/* <Muitable /> */}
+                      <Muitable />
                       
-                        <div>
+                        {/* <div>
                         <h1>Branches : {branchCount}</h1>
                         <ul>
                           {branches.map(branch => (
                             <li key={branch._id}>{branch.name}</li>
                           ))}
                         </ul>
-                      </div>
+                      </div> */}
 
                     </div>
                   </div>
