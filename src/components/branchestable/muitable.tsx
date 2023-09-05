@@ -1,105 +1,47 @@
-// import  { useState } from "react";
-import "../datatable/datatable.scss";
+import * as React from 'react';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import "react-bootstrap";
 
-// import { useBranches } from "../../lib/hooks/useBranches";
-import "./muitable.scss";
-
-// import { Link } from "react-router-dom";
-
-const BranchesTable = () => {
-  // const { error, loading, branches } = useBranches();
-  // const [page, setPage] = useState(0);
-  // const [rowsPerPage, setRowsPerPage] = useState(100);
-
-  // if (loading) {
-  //   return <div>Loading</div>;
-  // }
-
-  // if (error) {
-  //   return <div>Error: {error.message}</div>;
-  // }
-
-  // const handleChangePage = (event, newPage) => {
-  //   setPage(newPage);
-  // };
-
-  // const handleChangeRowsPerPage = (event) => {
-  //   setRowsPerPage(parseInt(event.target.value, 10));
-  //   setPage(0);
-  // };
-
-  // const displayedBranches = branches.slice(
-  //   page * rowsPerPage,
-  //   page * rowsPerPage + rowsPerPage
-  // );
-
-  // Add a unique `id` property to each row based on its index
-  // const rowsWithIds = displayedBranches.map((branch, index) => ({
-  //   ...branch,
-  //   id: index.toString(), // Use the index as the temporary identifier
-  // }));
-
-  // Define the columns for the DataGrid with fixed width
-  // const columns = [
-  //   { field: "branchCode", headerName: "ID", width: 170 }, // Set the width here
-  //   {
-  //     field: "branchImage",
-  //     headerName: "Image",
-  //     width: 100, // Set the width here
-  //     renderCell: (params) => (
-  //       <div className="cellContent">
-  //         <img src={params.value} alt="Branch Image" className="cellImg" />
-  //       </div>
-  //     ),
-  //   },
-  //   { field: "name", headerName: "Name", width: 200 }, // Set the width here
-  //   { field: "branchContact", headerName: "Contact", width: 150 }, // Set the width here
-  //   { field: "branchLocation", headerName: "Location", width: 500 }, // Set the width here
-  //   { field: "region", headerName: "Region", width: 150 }, // Set the width here
-    
-  //   {
-  //     field: "action",
-  //     headerName: "Action",
-  //     width: 200,
-  //     renderCell: (params) => {
-  //       return (
-  //         <div className="cellAction">
-  //           <Link to={`/users/${params.row.name}`} style={{ textDecoration: "none" }}>
-  //           <div className="viewButton">View</div>
-  //         </Link>
-
-  //           <div
-  //             className="deleteButton"
-  //             // onClick={() => handleDelete(params.row.id)}
-  //           >
-  //             Delete
-  //           </div>
-  //         </div>
-  //       );
-  //     },
-  //   },
-  // ];
-
-  //   const handleActionClick = (row) => {
-  //     // Handle the action button click here
-  //     console.log("Action clicked for row:", row);
-  //   };
-
-  //   return (
-  //     <div style={{ height: 700, width: "100%" }}>
-  //       <DataGrid
-  //         rows={rowsWithIds}
-  //         columns={columns}
-  //         pagination
-  //         pageSize={rowsPerPage}
-  //         page={page}
-  //         onPageChange={handleChangePage}
-  //         rowsPerPageOptions={[10, 25, 50]}
-  //       />
-  //     </div>
-  //   );
-  // };
+// Sample data
+const rows = [
+  { id: 1, firstName: 'John', lastName: 'Doe', age: 30 },
+  { id: 2, firstName: 'Jane', lastName: 'Smith', age: 28 },
+  { id: 3, firstName: 'Bob', lastName: 'Johnson', age: 35 },
+  { id: 1, firstName: 'John', lastName: 'Doe', age: 30 },
+  { id: 2, firstName: 'Jane', lastName: 'Smith', age: 28 },
+  { id: 3, firstName: 'Bob', lastName: 'Johnson', age: 35 },
   
-}
+  // Add more rows as needed
+];
 
-export default BranchesTable;
+const columns: GridColDef[] = [
+  { field: 'id', headerName: 'ID', width: 70 },
+  { field: 'firstName', headerName: 'First Name', width: 150 },
+  { field: 'lastName', headerName: 'Last Name', width: 150 },
+  { field: 'age', headerName: 'Age', type: 'number', width: 90 },
+];
+
+const DataTable: React.FC = () => {
+  return (
+    <div style={{ height: 400, width: '100%' }}>
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        autoPageSize // Number of rows per page
+        checkboxSelection // Enable checkboxes for row selection
+      />
+    </div>
+  );
+};
+
+const Muitable: React.FC = () => {
+  return (
+    <div>
+      {/* Other content on your page */}
+      <h4 className="p-3" style={{fontSize:"15px"}}>Orders Table</h4>
+      <DataTable />
+    </div>
+  );
+};
+
+export default Muitable;
