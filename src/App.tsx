@@ -1,12 +1,12 @@
-import Home from "./pages/home/Home";
+import Home from "./pages/Home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
-import Customers from "./pages/customers/customers";
-import Logins from "./pages/login/Login";
+import Customers from "./pages/Customers/customers";
+import Logins from "./pages/Login/Login";
 import Product from "./components/products/products";
-import ProtectedRoute from "./pages/protectedRoute";
+import ProtectedRoute from "./pages/ProtectedRoute";
 import AuthProvider from "./context/AuthProvider";
 
 function App() {
