@@ -82,7 +82,7 @@ function Login() {
 
                       {authState.isLoginError && <Alert variant="danger">Invalid credentials</Alert>}
 
-                      {/* <a className="small text-muted" href="#!">
+                      <a className="small text-muted" href="#!">
                         Forgot password?
                       </a>
                       <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>
@@ -90,13 +90,13 @@ function Login() {
                         <a href="#!" style={{ color: "#393f81" }}>
                           Register here
                         </a>
-                      </p> */}
-                      {/* <a href="#!" className="small text-muted">
+                      </p>
+                      <a href="#!" className="small text-muted">
                         Terms of use.
                       </a>
                       <a href="#!" className="small text-muted">
                         Privacy policy
-                      </a> */}
+                      </a>
                     </Form>
                   </Card.Body>
                 </Col>

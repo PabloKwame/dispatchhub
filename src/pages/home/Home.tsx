@@ -11,6 +11,7 @@ import Spinner from 'react-bootstrap/Spinner';
 
 
 import { useBranches } from "../../lib/hooks/useBranches";
+import Apexchart from "../../components/apexchart/apexchart";
 
 const Home = () => {
   const { error, loading } = useBranches();
@@ -39,25 +40,23 @@ const Home = () => {
           </div>
           <div className="charts">
             <Featured />
-            <div className="shadow">
+            <div className="shadow ">
               <h4 style={{ fontSize: "16px", fontWeight: "500" }}>
-                Sales Chart
+                <Apexchart/>
               </h4>
             </div>
           </div>
-          <div className="listContainer">
-            <div className="listTitle">Latest Transactions</div>
-            <Table />
-          </div>
+
           <div>
             <Container fluid>
               <Row>
-                <Col xl={12}>
-                  <div className="shadow">
+                <Col xl={12} className="charts">
+                  <div className="shadow" style={{width:'100%'}}>
                     <div className="pt-4 " style={{ paddingLeft: "20px" }}>
                       <h5 style={{ fontSize: "15px", color: "grey" }}>
                         Lastest Orders
                       </h5>
+                      <Table />
                     </div>
                     <div className="p-3">
                     </div>

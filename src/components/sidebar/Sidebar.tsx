@@ -24,6 +24,7 @@ const Sidebar = () => {
   //   setCollapsed(!collapsed);
   // };
 
+ 
   const { signOut } = useSignout()
 
 
@@ -31,6 +32,7 @@ const Sidebar = () => {
 
     <div className="sidebar">
       <div className="top">
+      <div className="toggle-button">Open Sidebar</div>
         <Link to="/home" style={{ textDecoration: "none" }}>
           <span className="logo">Dispatch Hub</span>
         </Link>
@@ -39,10 +41,12 @@ const Sidebar = () => {
       <div className="center">
         <ul>
           <p className="title">MAIN</p>
+          <Link to="/home" style={{ textDecoration: "none" }}>
           <li>
             <DashboardIcon className="icon" />
             <span>Dashboard</span>
           </li>
+          </Link>
           <p className="title">LISTS</p>
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>

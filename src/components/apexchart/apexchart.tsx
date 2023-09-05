@@ -26,7 +26,7 @@ const Apexchart = () => {
               series={state.series}
               type="bar"
               width="1090"
-              height="300"
+              height="400"
             />
          </div>
     )

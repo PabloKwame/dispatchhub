@@ -8,6 +8,7 @@ import Logins from "./pages/Login/Login";
 import Product from "./components/products/products";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import AuthProvider from "./context/AuthProvider";
+import List from "./components/table/Table";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -19,6 +20,8 @@ function App() {
           <Routes>
             <Route element={<ProtectedRoute />}>
               <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/users" element={<List />} />
               <Route path="/product" element={<Product />} />
               <Route path="/customers" element={<Customers />} />
             </Route>

@@ -2,11 +2,13 @@ import './customers.scss';
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import Single from "../single/Single";
+import { Container } from 'react-bootstrap';
 
 
 const Customers = () =>{
     return(
-    <div className="customers">
+    <Container fluid>
+      <div className="customers">
       <Sidebar/>
       <div className="customercontainer">
         <Navbar/>
@@ -19,6 +21,7 @@ const Customers = () =>{
         
       </div>
     </div>
+    </Container>
 
     )
 };
