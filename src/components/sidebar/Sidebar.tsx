@@ -12,19 +12,23 @@ import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSyst
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { Link } from "react-router-dom";
-import { DarkModeContext } from "../../context/darkModeContext";
-import { useContext, useState } from "react";
+import { useSignout } from "../../lib/hooks/authHooks/useSignout";
+// import { DarkModeContext } from "../../context/darkModeContext";
+// import { useContext, useState } from "react";
 
 const Sidebar = () => {
-  const { dispatch } = useContext(DarkModeContext);
-  const [collapsed, setCollapsed] = useState(true);
+  // const { dispatch } = useContext(DarkModeContext);
+  // const [collapsed, setCollapsed] = useState(true);
 
-  const toggleSidebar = () => {
-    setCollapsed(!collapsed);
-  };
+  // const toggleSidebar = () => {
+  //   setCollapsed(!collapsed);
+  // };
+
+  const { signOut } = useSignout()
+
 
   return (
-   
+
     <div className="sidebar">
       <div className="top">
         <Link to="/home" style={{ textDecoration: "none" }}>
@@ -95,18 +99,18 @@ const Sidebar = () => {
           </li>
           <li>
             <ExitToAppIcon className="icon" />
-            <span>Logout</span>
+            <span onClick={signOut} >Sign out</span>
           </li>
         </ul>
       </div>
       <div className="bottom">
         <div
           className="colorOption"
-          onClick={() => dispatch({ type: "LIGHT" })}
+        // onClick={() => dispatch({ type: "LIGHT" })}
         ></div>
         <div
           className="colorOption"
-          onClick={() => dispatch({ type: "DARK" })}
+        // onClick={() => dispatch({ type: "DARK" })}
         ></div>
       </div>
     </div>

@@ -9,7 +9,7 @@ const Tables = () =>{
         { id: 3, status: 'Completed' },
       ];
     
-      const getStatusVariant = (status) => {
+      const getStatusVariant = (status: string) => {
         switch (status) {
           case 'Active':
             return 'success';

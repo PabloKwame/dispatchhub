@@ -1,5 +1,3 @@
-import { Margin, Widgets } from "@mui/icons-material";
-import React from "react";
 import "./customercard.scss";
 import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
@@ -7,11 +5,8 @@ import PermPhoneMsgIcon from '@mui/icons-material/PermPhoneMsg';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import PaidIcon from '@mui/icons-material/Paid';
-import {Card,Container,Row,Col} from 'react-bootstrap';
-import { colors } from "@mui/material";
-import Tables from "../tables/table";
-import Customertabs from "../tabs/tabs";
-import { gql, useQuery } from "@apollo/client";
+import {Container,Row,Col} from 'react-bootstrap';
+
 import { useBranches } from "../../lib/hooks/useBranches";
 
 
