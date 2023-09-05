@@ -5,7 +5,11 @@ import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalance
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 
-const Widget = ({ type }:any) => {
+export type InsightCardProps = {
+  type?: string
+}
+
+const InsightCard = ({ type }: InsightCardProps) => {
   let data;
 
   //temporary
@@ -98,4 +102,4 @@ const Widget = ({ type }:any) => {
   );
 };
 
-export default Widget;
+export default InsightCard;

@@ -33,6 +33,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
     if (credentialsDetails) {
       dispatch({ type: AuthActionType.credentials, payload: { ...credentialsDetails, token: state.credentials?.token } })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

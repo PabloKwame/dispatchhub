@@ -4,8 +4,8 @@ import Navbar from "../../components/navbar/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import { useState } from "react";
 
-const New = ({ inputs, title }:any) => {
-  const [file, setFile] = useState();
+const New = ({ inputs, title }: any) => {
+  const [file, setFile] = useState<File | null>();
 
   return (
     <div className="new">
@@ -35,13 +35,12 @@ const New = ({ inputs, title }:any) => {
                 <input
                   type="file"
                   id="file"
-                  // @ts-ignore
                   onChange={(e) => { setFile(e.target.files![0]) }}
                   style={{ display: "none" }}
                 />
               </div>
 
-              {inputs.map((input:any) => (
+              {inputs.map((input: any) => (
                 <div className="formInput" key={input.id}>
                   <label>{input.label}</label>
                   <input type={input.type} placeholder={input.placeholder} />

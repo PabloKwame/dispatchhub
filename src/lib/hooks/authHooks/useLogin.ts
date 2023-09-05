@@ -15,6 +15,7 @@ export const useLogin = () => {
     if (localStorage.getItem("credentials")) {
       navigate("/");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [loginAdministrator, { data: LoginData }] = useMutation(SIGN_IN_MUTATION);
@@ -39,6 +40,7 @@ export const useLogin = () => {
       );
       navigate("/");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [credentialsDetails?.success]);
 
   const submitData = async (e: { preventDefault: () => void }) => {
@@ -68,7 +70,7 @@ export const useLogin = () => {
           password: authState.password,
         },
       });
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.log(error);
       authDispatch({
         type: AuthActionType.isLoginError,

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import Chart from "react-apexcharts";
 
 const Apexchart = () => {
-    const [state, setState] = useState({
+    const [state] = useState({
         options: {
           chart: {
             id: "basic-bar"

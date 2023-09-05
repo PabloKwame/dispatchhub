@@ -1,3 +1,7 @@
+// ///////////////////////////////////////////////////////////////////////////////
+// //                           Make sure you have component in a file          //
+// ///////////////////////////////////////////////////////////////////////////////
+
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
 import { userColumns, userRows } from "../../lib/datatablesource";
@@ -11,12 +15,13 @@ const Datatable = () => {
     setData(data.filter((item) => item.id !== id));
   };
 
+  //FIXME:   Make sure you have component in a file 
   const actionColumn = [
     {
       field: "action",
       headerName: "Action",
       width: 200,
-      renderCell: (params: { row: { id: any; }; }) => {
+      renderCell: (params: { row: { id: number; }; }) => {
         return (
           <div className="cellAction">
             <Link to="/users/test" style={{ textDecoration: "none" }}>
