@@ -33,7 +33,7 @@ const Productcard = () => {
                                     <div className="percentage positive">
                                     <KeyboardArrowUpIcon />20%
                                     </div>
-                                    <span style={{alignSelf:"flex-end"}}><MonetizationOnOutlinedIcon className="p-1" style={{backgroundColor: "rgba(255, 0, 0, 0.2)", color: "crimson",}}/></span>
+                                    <span style={{alignSelf:"flex-end"}}><MonetizationOnOutlinedIcon className="p-2" style={{backgroundColor: "rgba(255, 0, 0, 0.2)", color: "crimson",}}/></span>
                                 </div>
                             </div>
                         </div>
@@ -52,7 +52,7 @@ const Productcard = () => {
                                     <div className="percentage positive">
                                     <KeyboardArrowUpIcon />20%
                                     </div>
-                                    <span style={{alignSelf:"flex-end"}}><ShoppingCartOutlinedIcon className="p-1" style={{backgroundColor: "rgba(218, 165, 32, 0.2)", color: "goldenrod",}}/></span>
+                                    <span style={{alignSelf:"flex-end"}}><ShoppingCartOutlinedIcon className="p-2" style={{backgroundColor: "rgba(218, 165, 32, 0.2)", color: "goldenrod",}}/></span>
                                 </div>
                             </div>
                         </div>
@@ -71,7 +71,7 @@ const Productcard = () => {
                                     <div className="percentage positive">
                                     <KeyboardArrowUpIcon />20%
                                     </div>
-                                    <span style={{alignSelf:"flex-end"}} ><AccountBalanceWalletOutlinedIcon className="p-1" style={{backgroundColor: "rgba(255, 0, 0, 0.2)", color: "purple",}}/></span>
+                                    <span style={{alignSelf:"flex-end"}} ><AccountBalanceWalletOutlinedIcon className="p-2" style={{backgroundColor: "rgba(255, 0, 0, 0.2)", color: "purple",}}/></span>
                                 </div>
                             </div>
                         </div>

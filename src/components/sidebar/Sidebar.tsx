@@ -13,16 +13,10 @@ import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { Link } from "react-router-dom";
 import { useSignout } from "../../lib/hooks/authHooks/useSignout";
-// import { DarkModeContext } from "../../context/darkModeContext";
-// import { useContext, useState } from "react";
+import img2 from "../../assets/img/pizzaman-logo.png";
 
 const Sidebar = () => {
-  // const { dispatch } = useContext(DarkModeContext);
-  // const [collapsed, setCollapsed] = useState(true);
 
-  // const toggleSidebar = () => {
-  //   setCollapsed(!collapsed);
-  // };
 
  
   const { signOut } = useSignout()
@@ -34,7 +28,8 @@ const Sidebar = () => {
       <div className="top">
       <div className="toggle-button">Open Sidebar</div>
         <Link to="/home" style={{ textDecoration: "none" }}>
-          <span className="logo">Dispatch Hub</span>
+          <img src={img2} alt="Dispatch Hub Logo" className="logo"  style={{width:"70px", height:"50px"}}/>
+          {/* <span className="">Dispatch Hub</span> */}
         </Link>
       </div>
       <hr />
