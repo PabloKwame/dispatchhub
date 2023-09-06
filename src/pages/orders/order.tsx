@@ -1,27 +1,24 @@
 import './order.scss';
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import Single from "../single/Single";
 import { Container } from 'react-bootstrap';
 import Ordercard from '../../components/ordercard/ordercard';
 
 
-const Orders = () =>{
-    return(
+const Orders = () => {
+  return (
     <Container fluid>
       <div className="order">
-      <Sidebar/>
-      <div className="orderContainer">
-        <Navbar/>
-        
-            <div className="pt-4">
-                <Ordercard/>
-            </div>
-        
+        <Sidebar />
+        <div className="orderContainer">
+          <Navbar />
+          <div className="pt-4">
+            <Ordercard />
+          </div>
+        </div>
       </div>
-    </div>
     </Container>
 
-    )
+  )
 };
 export default Orders;
