@@ -1,4 +1,4 @@
-import "./ordercard.scss";
+import "./productcard.scss";
 import {Container,Row,Col} from 'react-bootstrap';
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
@@ -6,12 +6,12 @@ import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalance
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 import Muitable from "../orderstable/muitable";
-import Muiorders from "../orderstable/muitable";
+import Muiproduct from "../productstable/muitable";
 
 
 
 
-const Ordercard = () => {
+const Productcard = () => {
 
 
 
@@ -23,11 +23,11 @@ const Ordercard = () => {
                         <div className="p-1 respons" >
                         <div className="widget">
                                 <div className="left">
-                                    <span className="title">Total Orders</span>
+                                    <span className="title">Total Products</span>
                                     <span className="counter">
                                     200
                                     </span>
-                                    <span className="link">View all Orders</span>
+                                    <span className="link">View all products</span>
                                 </div>
                                 <div className="right">
                                     <div className="percentage positive">
@@ -42,11 +42,11 @@ const Ordercard = () => {
                     <div className="p-1 respons" >
                         <div className="widget">
                                 <div className="left">
-                                    <span className="title">Total Amount</span>
+                                    <span className="title"> Enabled Products</span>
                                     <span className="counter">
                                     200
                                     </span>
-                                    <span className="link">View all Orders</span>
+                                    <span className="link">View all enabled products</span>
                                 </div>
                                 <div className="right">
                                     <div className="percentage positive">
@@ -61,11 +61,11 @@ const Ordercard = () => {
                     <div className="p-1 respons" >
                         <div className="widget">
                                 <div className="left">
-                                    <span className="title">Active Orders</span>
+                                    <span className="title">Disabled Products</span>
                                     <span className="counter">
                                     200
                                     </span>
-                                    <span className="link">View Successful Orders</span>
+                                    <span className="link">View all disabled product</span>
                                 </div>
                                 <div className="right">
                                     <div className="percentage positive">
@@ -76,15 +76,15 @@ const Ordercard = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col xs={6} md={3} className="mb-4 float-left" style={{paddingRight:'20px'}}>
+                    {/* <Col xs={6} md={3} className="mb-4 float-left" style={{paddingRight:'20px'}}>
                     <div className="p-1 respons" >
                         <div className="widget">
                                 <div className="left">
-                                    <span className="title">Rejected Orders</span>
+                                    <span className="title">Other Products</span>
                                     <span className="counter">
                                     200
                                     </span>
-                                    <span className="link">View Rejected Orders</span>
+                                    <span className="link">View other products</span>
                                 </div>
                                 <div className="right">
                                     <div className="percentage positive">
@@ -94,17 +94,17 @@ const Ordercard = () => {
                                 </div>
                             </div>
                         </div>
-                    </Col>
+                    </Col> */}
                 </Col>
             </Row>
             <Row>
                 <Col xl={12} style={{padding:'15px'}}>
-                    <div className="shadow" style={{overflow:'auto'}}>
-                        <Muiorders/>
+                    <div className="shadow respon" >
+                        <Muiproduct/>
                     </div>
                 </Col>
             </Row>
         </Container>
     )
 };
-export default Ordercard;
+export default Productcard;

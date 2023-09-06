@@ -5,11 +5,11 @@ import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import Customers from "./pages/Customers/customers";
 import Logins from "./pages/Login/Login";
-import Product from "./components/products/products";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import AuthProvider from "./context/AuthProvider";
 import List from "./components/table/Table";
 import Orders from "./pages/orders/order";
+import Products from "./pages/Products/products";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -23,7 +23,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route path="/orders" element={<Orders />} />
-              <Route path="/product" element={<Product />} />
+              <Route path="/products" element={<Products />} />
               <Route path="/customers" element={<Customers />} />
             </Route>
             <Route index path="login" element={<Logins />} />

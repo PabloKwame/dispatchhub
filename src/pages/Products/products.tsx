@@ -1,21 +1,20 @@
-import './order.scss';
+import './products.scss';
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import Single from "../single/Single";
 import { Container } from 'react-bootstrap';
-import Ordercard from '../../components/ordercard/ordercard';
+import Productcard from '../../components/productcard/productcard';
 
 
-const Orders = () =>{
+const Products = () =>{
     return(
     <Container fluid>
-      <div className="order">
+      <div className="product">
       <Sidebar/>
-      <div className="orderContainer">
+      <div className="productContainer">
         <Navbar/>
         
             <div className="pt-4">
-                <Ordercard/>
+                <Productcard/>
             </div>
         
       </div>
@@ -24,4 +23,4 @@ const Orders = () =>{
 
     )
 };
-export default Orders;
+export default Products;

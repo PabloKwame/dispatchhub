@@ -8,14 +8,18 @@ const rows = [
   { id: 2, firstName: 'Jane', lastName: 'Smith', age: 28, status: 'Pending' },
   { id: 3, firstName: 'Bob', lastName: 'Johnson', age: 35, status: 'Dispatched' },
   { id: 4, firstName: 'Alice', lastName: 'Johnson', age: 40, status: 'Completed' },
+  { id: 1, firstName: 'John', lastName: 'Doe', age: 30, status: 'Rejected' },
+  { id: 2, firstName: 'Jane', lastName: 'Smith', age: 28, status: 'Pending' },
+  { id: 3, firstName: 'Bob', lastName: 'Johnson', age: 35, status: 'Dispatched' },
+  { id: 4, firstName: 'Alice', lastName: 'Johnson', age: 40, status: 'Completed' },
   // Add more rows as needed
 ];
 
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'firstName', headerName: 'First Name', width: 150 },
-  { field: 'lastName', headerName: 'Last Name', width: 150 },
-  { field: 'age', headerName: 'Age', type: 'number', width: 90 },
+  { field: 'firstName', headerName: 'First Name', width: 300 },
+  { field: 'lastName', headerName: 'Last Name', width: 300 },
+  { field: 'age', headerName: 'Age', type: 'number', width: 300},
   {
     field: 'status',
     headerName: 'Status',
@@ -26,13 +30,13 @@ const columns: GridColDef[] = [
           style={{
             backgroundColor:
               params.value === 'Rejected'
-                ? 'red'
+                ? '#FF8A8A'
                 : params.value === 'Pending'
-                ? 'orange'
+                ? '#ffae42'
                 : params.value === 'Dispatched'
-                ? 'blue'
+                ? '#87ceeb'
                 : params.value === 'Completed'
-                ? 'green'
+                ? '#90ee90'
                 : 'transparent',
             color: 'white',
             padding: '2px 8px',
@@ -46,7 +50,7 @@ const columns: GridColDef[] = [
   },
 ];
 
-const Muitable: React.FC = () => {
+const Muiorders: React.FC = () => {
   return (
     <div style={{ height: 400, width: '100%' }}>
       <DataGrid
@@ -60,4 +64,4 @@ const Muitable: React.FC = () => {
 };
 
 
-export default Muitable;
+export default Muiorders;
