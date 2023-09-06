@@ -1,20 +1,20 @@
 import * as React from 'react';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import "react-bootstrap";
-import { useProductProvider } from '../../context/ProductProvider';
+// import { useProductProvider } from '../../context/ProductProvider';
 
 // Sample data with a "status" field
-// const rows = [
-//   { id: 1, firstName: 'John', lastName: 'Doe', age: 30, status: 'Rejected' },
-//   { id: 2, firstName: 'Jane', lastName: 'Smith', age: 28, status: 'Pending' },
-//   { id: 3, firstName: 'Bob', lastName: 'Johnson', age: 35, status: 'Dispatched' },
-//   { id: 4, firstName: 'Alice', lastName: 'Johnson', age: 40, status: 'Completed' },
-//   { id: 1, firstName: 'John', lastName: 'Doe', age: 30, status: 'Rejected' },
-//   { id: 2, firstName: 'Jane', lastName: 'Smith', age: 28, status: 'Pending' },
-//   { id: 3, firstName: 'Bob', lastName: 'Johnson', age: 35, status: 'Dispatched' },
-//   { id: 4, firstName: 'Alice', lastName: 'Johnson', age: 40, status: 'Completed' },
-//   // Add more rows as needed
-// ];
+const rows = [
+  { id: 1, firstName: 'John', lastName: 'Doe', age: 30, status: 'Rejected' },
+  { id: 2, firstName: 'Jane', lastName: 'Smith', age: 28, status: 'Pending' },
+  { id: 3, firstName: 'Bob', lastName: 'Johnson', age: 35, status: 'Dispatched' },
+  { id: 4, firstName: 'Alice', lastName: 'Johnson', age: 40, status: 'Completed' },
+  { id: 1, firstName: 'John', lastName: 'Doe', age: 30, status: 'Rejected' },
+  { id: 2, firstName: 'Jane', lastName: 'Smith', age: 28, status: 'Pending' },
+  { id: 3, firstName: 'Bob', lastName: 'Johnson', age: 35, status: 'Dispatched' },
+  { id: 4, firstName: 'Alice', lastName: 'Johnson', age: 40, status: 'Completed' },
+  // Add more rows as needed
+];
 
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -54,13 +54,13 @@ const columns: GridColDef[] = [
 // FIXME : A compnent per file. You can move to other components
 const Muiproduct: React.FC = () => {
 
-  const { productState } = useProductProvider();
+  // const { productState } = useProductProvider();
 
 
   return (
     <div style={{ height: 400, width: '100%' }}>
       <DataGrid
-        rows={productState.productList}
+        rows={rows}
         columns={columns}
         autoPageSize // This adjusts the page size based on the available height
         checkboxSelection // Enable checkboxes for row selection
